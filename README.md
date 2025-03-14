@@ -6,7 +6,6 @@
 
 The original MCP file server was functional but not optimized for how LLMs actually interact with filesystems. This project delivers a complete redesign focused on simplicity, privacy, and efficiency.
 
-![Filesystem access through MCP](https://i.imgur.com/nWX6Efy.png)
 
 ### Key Innovations
 
@@ -18,11 +17,14 @@ The original MCP file server was functional but not optimized for how LLMs actua
 ## Quick Start
 
 ```bash
-# Install
-npm install -g better-mcp-file-server
+# Install from source (npm package coming soon)
+git clone https://github.com/martinschlott/BetterMCPFileServer.git
+cd BetterMCPFileServer
+npm install
+npm run build
 
 # Run with aliases
-better-mcp-file-server code:~/projects docs:~/documents
+BetterMCPFileServer code:~/projects docs:~/documents
 ```
 
 That's it! Now Claude can access your files through privacy-preserving aliases like `code/src/main.js` instead of `/Users/yourusername/projects/src/main.js`.
@@ -260,10 +262,10 @@ const files = await searchFilesAndFolders({
 ## Installation
 
 ```bash
-# From npm (once published)
-npm install -g better-mcp-file-server
+# From npm (coming soon)
+npm install -g BetterMCPFileServer  # Not yet available
 
-# From source
+# From source (current method)
 git clone https://github.com/martinschlott/BetterMCPFileServer.git
 cd BetterMCPFileServer
 npm install
@@ -276,17 +278,17 @@ npm link  # Optional, makes command available globally
 Start the server with at least one alias:directory pair:
 
 ```bash
-better-mcp-file-server alias:directory [alias2:directory2 ...]
+BetterMCPFileServer alias:directory [alias2:directory2 ...]
 ```
 
 Examples:
 
 ```bash
 # Single directory
-better-mcp-file-server code:~/projects
+BetterMCPFileServer code:~/projects
 
 # Multiple directories
-better-mcp-file-server code:~/Development docs:~/Documents/Technical notes:~/Notes
+BetterMCPFileServer code:~/Development docs:~/Documents/Technical notes:~/Notes
 ```
 
 ## Advanced Configuration
@@ -296,7 +298,7 @@ Create a simple shell script for consistent configuration:
 ```bash
 #!/bin/bash
 # start-server.sh
-better-mcp-file-server \
+BetterMCPFileServer \
   code:~/Development/MyProjects \
   docs:~/Documents/Technical \
   data:~/Data/Samples \
