@@ -1,0 +1,39 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => {
+      const args = [];
+      for (const { alias, path } of config.aliases) {
+        args.push(`${alias}:${path}`);
+      }
+      return { command: 'node', args: ['dist/index.js', ...args], env: {} };
+    }
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - aliases
+    properties:
+      aliases:
+        type: array
+        items:
+          type: object
+          required:
+            - alias
+            - path
+          properties:
+            alias:
+              type: string
+            path:
+              type: string
+        default:
+          - alias: root
+            path: /app
+  exampleConfig:
+    aliases:
+      - alias: root
+        path: /app
