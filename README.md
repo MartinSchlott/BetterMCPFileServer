@@ -2,6 +2,8 @@
 
 # BetterMCPFileServer
 
+[![smithery badge](https://smithery.ai/badge/@MartinSchlott/BetterMCPFileServer)](https://smithery.ai/server/@MartinSchlott/BetterMCPFileServer)
+
 > A reimagined Model Context Protocol (MCP) server for filesystem access with privacy-preserving path aliases and an optimized LLM-friendly API.
 
 ## Why BetterMCPFileServer?
@@ -263,6 +265,15 @@ const files = await searchFilesAndFolders({
 
 ## Installation
 
+### Installing via Smithery
+
+To install Better MCP File Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@MartinSchlott/BetterMCPFileServer):
+
+```bash
+npx -y @smithery/cli install @MartinSchlott/BetterMCPFileServer --client claude
+```
+
+### Installing manually
 ```bash
 # From npm (coming soon)
 npm install -g BetterMCPFileServer  # Not yet available
