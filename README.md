@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/mseep-audited.png)](https://mseep.ai/app/martinschlott-bettermcpfileserver)
+
 # BetterMCPFileServer
 
 > A reimagined Model Context Protocol (MCP) server for filesystem access with privacy-preserving path aliases and an optimized LLM-friendly API.
